@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notes | Student Productivity</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">📝 Notes</div>
+    <div class="nav-right">
+      <a href="dashboard.html" class="link">Dashboard</a>
+      <a href="habits.html" class="link">Habits</a>
+      <a href="notes.html" class="link active">Notes</a>
+      <span id="usernameDisplay" class="chip"></span>
+      <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="grid grid-2">
+      <div class="card">
+        <h3>Add Note</h3>
+        <form id="noteForm" class="col">
+          <input id="noteTitle" placeholder="Title (optional)"/>
+          <textarea id="noteBody" rows="6" placeholder="Write something..."></textarea>
+          <div class="row right">
+            <button class="btn" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Search</h3>
+        <input id="noteSearch" placeholder="Search notes..." />
+      </div>
+    </section>
+
+    <section class="grid grid-3" id="notesGrid"></section>
+  </main>
+
+  <script src="js/notes.js"></script>
+</body>
+</html>

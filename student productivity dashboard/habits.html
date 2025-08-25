@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Habits | Student Productivity</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">📆 Habit Manager</div>
+    <div class="nav-right">
+      <a href="dashboard.html" class="link">Dashboard</a>
+      <a href="habits.html" class="link active">Habits</a>
+      <a href="notes.html" class="link">Notes</a>
+      <span id="usernameDisplay" class="chip"></span>
+      <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="card">
+      <h3>Add New Habit</h3>
+      <form id="habitForm" class="row">
+        <input id="habitName" placeholder="e.g., Study 2 hours" required/>
+        <button class="btn" type="submit">Add Habit</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Today’s Habits</h3>
+      <div id="todayStr" class="muted"></div>
+      <ul id="habitList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h3>All Habits</h3>
+      <table class="table">
+        <thead>
+          <tr><th>Habit</th><th>Streak</th><th>Last Done</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="habitTable"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/habits.js"></script>
+</body>
+</html>

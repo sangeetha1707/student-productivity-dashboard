@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Student Productivity</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">📊 Student Dashboard</div>
+    <div class="nav-right">
+      <a href="dashboard.html" class="link">Dashboard</a>
+      <a href="habits.html" class="link">Habits</a>
+      <a href="notes.html" class="link">Notes</a>
+      <span id="usernameDisplay" class="chip"></span>
+      <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- KPI Cards -->
+    <section class="grid grid-3">
+      <div class="card kpi pink">
+        <h3>✅ Tasks</h3>
+        <p class="kpi-num"><span id="tasksDone">0</span>/<span id="tasksTotal">0</span></p>
+        <div class="progress"><div id="tasksProgress"></div></div>
+      </div>
+
+      <div class="card kpi blue">
+        <h3>📆 Habit Streak</h3>
+        <p class="kpi-num"><span id="bestStreak">0</span> days</p>
+        <small id="bestStreakName" class="muted"></small>
+      </div>
+
+      <div class="card kpi purple">
+        <h3>📝 Notes</h3>
+        <p class="kpi-num"><span id="notesCount">0</span></p>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="grid grid-2">
+      <div class="card">
+        <h3>Habit Completions (Last 7 Days)</h3>
+        <canvas id="habit7Chart" height="160"></canvas>
+      </div>
+      <div class="card">
+        <h3>Tasks Completed (Last 7 Days)</h3>
+        <canvas id="task7Chart" height="160"></canvas>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="grid grid-2">
+      <div class="card">
+        <h3>Quick Add Task</h3>
+        <form id="taskForm" class="row">
+          <input id="taskInput" placeholder="e.g., Finish DSA sheet 2 problems" />
+          <button class="btn" type="submit">Add</button>
+        </form>
+        <ul id="taskList" class="list"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Quick Note</h3>
+        <form id="noteForm" class="col">
+          <textarea id="noteInput" rows="4" placeholder="Brain dump here..."></textarea>
+          <div class="row right">
+            <a class="btn btn-outline" href="notes.html">Open Notes</a>
+            <button class="btn" type="submit">Save</button>
+          </div>
+        </form>
+        <div id="recentNotes" class="notes-preview"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

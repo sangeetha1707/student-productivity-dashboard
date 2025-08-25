@@ -1,0 +1,110 @@
+/* ---------- Reset & Base ---------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --pink:#ffb3c1; --pink-strong:#ff8fab;
+  --blue:#a8edea; --purple:#f3e5f5;
+  --shadow:0 8px 20px rgba(0,0,0,0.08);
+  --radius:16px;
+}
+body{
+  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+  background: linear-gradient(135deg, #ffe5ec, #e0f7fa);
+  color:#333;
+  min-height:100vh;
+}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position:sticky; top:0; background:#fff; box-shadow:var(--shadow);
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 20px; z-index:10;
+}
+.brand{ font-weight:700; }
+.nav-right{ display:flex; align-items:center; gap:12px; }
+.link{ text-decoration:none; color:#444; padding:6px 10px; border-radius:999px; }
+.link.active, .link:hover{ background:#f5f5f5; }
+
+/* ---------- Layout ---------- */
+.container{ max-width:1100px; margin:24px auto; padding:0 16px; display:flex; flex-direction:column; gap:24px; }
+.grid{ display:grid; gap:20px; }
+.grid-2{ grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+.grid-3{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+
+/* ---------- Cards ---------- */
+.card{
+  background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:18px;
+}
+.card h3{ margin-bottom:10px; }
+
+/* KPI cards */
+.kpi{ display:flex; flex-direction:column; gap:8px; }
+.kpi .kpi-num{ font-size:2rem; font-weight:700; }
+.kpi.pink{ background: #ffe5ec; }
+.kpi.blue{ background: #e0f7fa; }
+.kpi.purple{ background: #f3e5f5; }
+
+/* ---------- Chips & Buttons ---------- */
+.chip{
+  background:#f2f2f2; padding:6px 10px; border-radius:999px; font-size:0.9rem;
+}
+.btn{
+  background:var(--pink); border:none; color:#222;
+  padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600;
+  transition:transform .05s ease, background .2s ease;
+}
+.btn:hover{ background:var(--pink-strong); transform:translateY(-1px); }
+.btn-outline{
+  background:#fff; border:1px solid #ddd;
+}
+.btn-outline:hover{ background:#f9f9f9; }
+.btn-danger{ background:#ff6b6b; color:#fff; }
+.btn-danger:hover{ background:#ff5252; }
+.icon-btn{
+  background:transparent; border:none; cursor:pointer; font-size:1rem; opacity:.7;
+}
+.icon-btn:hover{ opacity:1; }
+
+/* ---------- Forms & Inputs ---------- */
+input, textarea, select{
+  width:100%; padding:10px 12px; border:1px solid #ddd; border-radius:10px;
+}
+.row{ display:flex; align-items:center; gap:10px; }
+.col{ display:flex; flex-direction:column; gap:10px; }
+.right{ justify-content:flex-end; }
+.gap{ gap:10px; }
+.muted{ color:#777; }
+.strike{ text-decoration:line-through; }
+
+/* ---------- Lists, Tables ---------- */
+.list{ list-style:none; display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+.list-item{
+  background:#f8f9fa; border-radius:12px; padding:10px 12px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.empty{ padding:10px; text-align:center; color:#777; font-style:italic; }
+
+.table{ width:100%; border-collapse:collapse; }
+.table th, .table td{ text-align:left; padding:10px; border-bottom:1px solid #eee; }
+
+/* ---------- Progress ---------- */
+.progress{ width:100%; height:10px; background:#eee; border-radius:999px; overflow:hidden; }
+#tasksProgress{ height:100%; width:0%; background:var(--pink-strong); }
+
+/* ---------- Notes ---------- */
+.notes-preview{ margin-top:10px; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }
+.note-chip{ background:#fffdf6; border:1px dashed #ffe08a; border-radius:12px; padding:10px; }
+.note-card{ background:#fffdf6; border:1px solid #ffe6a7; border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:8px; }
+
+/* ---------- Auth (login/signup) ---------- */
+.auth-container{
+  background:#fff; padding:2rem; border-radius:1rem; box-shadow:var(--shadow);
+  width:min(90vw,380px); margin:8vh auto; text-align:center;
+}
+.auth-container h1{ margin-bottom:1rem; color:#444; }
+.auth-container form{ display:flex; flex-direction:column; gap:10px; }
+.auth-container input{ width:100%; }
+.auth-container button{ width:100%; }
+
+/* ---------- Utility ---------- */
+a{ color:inherit; }
